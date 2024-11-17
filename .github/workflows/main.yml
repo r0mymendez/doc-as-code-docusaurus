@@ -1,0 +1,39 @@
+name: Doc-as-Code Docusaurus
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Clone the repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      # Install npm dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Build the static site
+      - name: Build site
+        run: npm run build
+
+      # Upload files to S3
+      - name: Deploy to S3
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          AWS_DEFAULT_REGION: 'us-east-1' # Update to match your region
+        run: |
+          aws s3 rm s3://doc-as-code-docusaurus --recursive
+          aws s3 cp ./build s3://doc-as-code-docusaurus --recursive
