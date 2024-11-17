@@ -1,4 +1,4 @@
-name: Doc-as-Code-Docusaurus
+name: Doc-as-Code Docusaurus
 
 on:
   push:
