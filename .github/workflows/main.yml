@@ -26,6 +26,7 @@ jobs:
 
       # Build the static site
       - name: Build site
+        working-directory: my-website
         run: npm run build
 
       # Upload files to S3
