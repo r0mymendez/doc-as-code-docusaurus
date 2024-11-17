@@ -22,6 +22,7 @@ jobs:
 
       # Install npm dependencies
       - name: Install dependencies
+        working-directory: my-website
         run: npm install
 
       # Build the static site
