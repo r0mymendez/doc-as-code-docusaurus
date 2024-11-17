@@ -38,4 +38,4 @@ jobs:
           AWS_DEFAULT_REGION: 'us-east-1' # Update to match your region
         run: |
           aws s3 rm s3://doc-as-code-docusaurus --recursive
-          aws s3 cp ./build s3://doc-as-code-docusaurus --recursive
+          aws s3 cp my-website/build s3://doc-as-code-docusaurus --recursive
