@@ -78,7 +78,7 @@ To make the documentation dynamic, I’ve leveraged **Jinja2**. This allowed me 
 
 * **Introduction Page**: I’ve added functionality to display the date of the last documentation update, which is dynamically retrieved from a database table.  
 * **Tables Page**: I used Jinja2 to showcase a data table by dynamically rendering the first few rows of a dataframe query.  
-* **Architecture Page**: I included insights into the AWS data processing architecture. The detailed implementation is explained in a related repository I created, called [doc-as-diagram](https://github.com/r0mymendez/doc-as-diagrams), which serves as a blueprint.  
+* * The **architecture** page explains the architecture supporting this functionality, and further details can be found in another repository called [diagram-as-code](https://github.com/r0mymendez/diagram-as-code), which provides the blueprint for implementation.  
 
 
 ![Documentation Site Preview](img/docusaurus_build-serve.png)
